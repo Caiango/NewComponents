@@ -60,9 +60,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             progress.setMessage("Carregando seu processo")
             progress.show()
 
-            //para fechar via codigo o progress Dialog (o hide e o miss tem de vir juntos)
-            // progress.hide()
-            // progress.dismiss()
+            /*
+            para fechar via codigo o progress Dialog (o hide e o miss tem de vir juntos)
+            progress.hide()
+            progress.dismiss()
+            */
 
         }
 
@@ -71,6 +73,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun setListeners() {
         ButToast.setOnClickListener(this)
         ButSnack.setOnClickListener(this)
+        ButProgress.setOnClickListener(this)
 
     }
 
