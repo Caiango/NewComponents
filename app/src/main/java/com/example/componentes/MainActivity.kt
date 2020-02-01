@@ -1,5 +1,6 @@
 package com.example.componentes
 
+import android.app.ProgressDialog
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -41,9 +42,30 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             val snack = Snackbar.make(constraint, "SnackBar funcional", Snackbar.LENGTH_LONG)
             //snack.view.setBackgroundColor(Color.BLUE)
             // se eu quiser pegar uma cor do meu arquivo
-            snack.view.setBackgroundColor(ContextCompat.getColor(this,R.color.colorBack))
+            snack.view.setBackgroundColor(ContextCompat.getColor(this, R.color.colorBack))
+
+
+            //vou setar um evento de click na snack
+            snack.setAction("Clica de novo", {
+                val snack2 = Snackbar.make(constraint, "SnackBar Desfazer", Snackbar.LENGTH_LONG)
+                snack2.view.setBackgroundColor(Color.RED)
+                snack2.show()
+            })
+
             snack.show()
+        } else if (id == R.id.ButProgress) {
+            //balao de carregamento
+            val progress: ProgressDialog = ProgressDialog(this)
+            progress.setTitle("ProgressDialog")
+            progress.setMessage("Carregando seu processo")
+            progress.show()
+
+            //para fechar via codigo o progress Dialog (o hide e o miss tem de vir juntos)
+            // progress.hide()
+            // progress.dismiss()
+
         }
+
     }
 
     private fun setListeners() {
