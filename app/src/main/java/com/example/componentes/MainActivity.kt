@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
+import android.content.Intent
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -66,6 +67,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             progress.dismiss()
             */
 
+        } else if (id == R.id.ButActivity) {
+            //  chamando outra activity
+            val intent: Intent = Intent(this, Main2Activity::class.java)
+            startActivity(intent)
+
         }
 
     }
@@ -74,6 +80,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         ButToast.setOnClickListener(this)
         ButSnack.setOnClickListener(this)
         ButProgress.setOnClickListener(this)
+        ButActivity.setOnClickListener(this)
 
     }
 
